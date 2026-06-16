@@ -15,7 +15,7 @@ class Package {
 	 *
 	 * @var string
 	 */
-	const VERSION = '2.2.0';
+	const VERSION = '2.2.1';
 
 	protected static $localized_scripts = array();
 
@@ -388,7 +388,8 @@ class Package {
 		$stores['order-item-withdrawal'] = 'Vendidero\OrderWithdrawalButton\DataStores\WithdrawalItem';
 
 		/**
-		 * Backwards compatibility for Woo < 8.7
+		 * Backwards compatibility for older Woo wc_orders_count implementation
+		 * requesting count via static order type data store names.
 		 */
 		$stores['shop_order_withdraw'] = 'Vendidero\OrderWithdrawalButton\DataStores\WithdrawalOrderCPT';
 
@@ -718,15 +719,29 @@ class Package {
 		}
 	}
 
+	public static function page_has_withdrawal_form( $the_post = null ) {
+		return self::page_has_shortcode( 'eu_owb_order_withdrawal_request_form', $the_post ) || apply_filters( 'eu_owb_woocommerce_page_has_form', false, $the_post );
+	}
+
+	public static function page_has_shortcode( $tag, $the_post = null ) {
+		if ( ! is_null( $the_post ) ) {
+			$the_post = get_post( $the_post );
+		} else {
+			global $post;
+
+			$the_post = $post;
+		}
+
+		return is_a( $the_post, 'WP_Post' ) && has_shortcode( $the_post->post_content, $tag );
+	}
+
 	public static function register_scripts() {
 		self::register_script( 'eu-owb-woocommerce', 'static/order-withdrawal.js', array( 'jquery', 'woocommerce' ) );
 		wp_register_style( 'eu-owb-woocommerce-form', self::get_assets_url( 'static/form-styles.css' ), array(), self::get_version() );
 
-		if ( function_exists( 'wc_post_content_has_shortcode' ) ) {
-			if ( wc_post_content_has_shortcode( 'eu_owb_order_withdrawal_request_form' ) || apply_filters( 'eu_owb_woocommerce_page_has_form', false ) ) {
-				wp_enqueue_style( 'eu-owb-woocommerce-form' );
-				wp_enqueue_script( 'eu-owb-woocommerce' );
-			}
+		if ( self::page_has_withdrawal_form() ) {
+			wp_enqueue_style( 'eu-owb-woocommerce-form' );
+			wp_enqueue_script( 'eu-owb-woocommerce' );
 		}
 	}
 
@@ -812,7 +827,7 @@ class Package {
 		add_filter(
 			'is_woocommerce',
 			function ( $is_woocommerce ) {
-				if ( wc_post_content_has_shortcode( 'eu_owb_order_withdrawal_request_form' ) ) {
+				if ( self::page_has_withdrawal_form() ) {
 					$is_woocommerce = true;
 				}
 
