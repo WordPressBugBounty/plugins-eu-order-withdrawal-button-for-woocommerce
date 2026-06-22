@@ -5,7 +5,7 @@ Requires at least: 5.4
 Tested up to: 7.0
 WC requires at least: 3.9
 WC tested up to: 10.8
-Stable tag: 2.2.1
+Stable tag: 2.3.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,13 +14,30 @@ This plugin helps to comply with the latest EU directive 2023/2673 by embedding 
 
 == Description ==
 
-EU Order Withdrawal Button for WooCommerce adds compliance with the [EU directive 2023/2673](https://eur-lex.europa.eu/eli/dir/2023/2673/oj/eng) to WooCommerce.
-With the help of this little plugin you may easily allow your customers to submit (partial) withdrawal requests to their orders.
+EU Order Withdrawal Button for WooCommerce adds compliance with the [EU directive 2023/2673](https://eur-lex.europa.eu/eli/dir/2023/2673/oj/eng) to WooCommerce. With the help of this little plugin you may easily allow your customers to submit (partial) withdrawal requests to their orders.
 
 * *Withdrawal request form* - Use a shortcode to embed a withdrawal request form which works both for guest orders and registered customers.
 * *Manage withdrawals* - Easily manage withdrawals from your WooCommerce order page by either confirming or rejecting requests.
-* *Send confirmation emails* - Automatically confirm receipt of the withdrawal by email.
+* *Send confirmation emails* - Automatically confirm receipt of the withdrawal by email including all required information.
 * *Partial withdrawals* - Optionally allow customers to submit partial withdrawal requests.
+* *GDPR ready* - Comes with privacy policy proposal, support for personal data export and erasure.
+* *WPML compatibility* - Comes with built-in compatibility for multilingual shops using WPML
+
+= Initial setup and withdrawal button placement =
+
+After installation, a new page (withdraw from contract) is created as a draft. This page includes the [eu_owb_order_withdrawal_request_form] shortcode to output the withdrawal form.
+
+1. Review the page created and your settings under WooCommerce > Settings > Advanced > Withdrawals (In case you are using our plugin [Germanized for WooCommerce](https://wordpress.org/plugins/woocommerce-germanized/) find your settings under WooCommerce > Settings > Germanized > General)
+2. Publish the page containing the withdrawal form shortcode
+3. Make sure that the withdrawal button is shown in your footer on shop-related pages
+4. Review the email templates provided to confirm the receipt, confirmation and rejection of withdrawals under WooCommerce > Settings > Emails
+5. Test the withdrawal procedure both as a guest and as a customer
+
+If you don't want the button to be injected automatically, disable the related setting and either use the shortcode [eu_owb_order_withdrawal_button] to output the button or manually create a link to your withdrawal page within your theme or pagebuilder.
+
+= Integrated with Shiptastic for WooCommerce =
+
+Use our plugin [Shiptastic for WooCommerce](https://wordpress.org/plugins/shiptastic-for-woocommerce/) to handle returns with ease. After confirming a withdrawal request, Shiptastic automatically adds a return shipment including all items of the original request. Provide your customer with all the information needed to return the goods to you. Use Shiptastic to exclude certain products from being returnable at all.
 
 == Installation ==
 
@@ -33,8 +50,8 @@ With the help of this little plugin you may easily allow your customers to submi
 = Automatic Installation =
 
 We recommend installing EU Order Withdrawal Button for WooCommerce through the WordPress backend. Please install WooCommerce before installing the plugin.
-After the installation, go to WooCommerce > Settings > Advanced > Withdrawals to manage your settings. During installation, the plugin creates a withdrawal page
-containing the shortcode as a draft. After testing the withdrawal process, make sure to publish that page so that your customers can access it too.
+
+Follow the [initial setup steps](https://wordpress.org/plugins/eu-order-withdrawal-button-for-woocommerce/) to configure the plugin.
 
 == Frequently Asked Questions ==
 
@@ -59,9 +76,22 @@ Bug reports may be filed via our [GitHub repository](https://github.com/vendider
 == Screenshots ==
 
 1. Withdrawal form
-2. Admin UI
+2. Manage order
+3. Manage withdrawals
 
 == Changelog ==
+= 2.3.0 =
+* New: WPML compatibility
+* New: Privacy additions (export, erase, policy suggestions)
+* New: Setting to select which fields to be mandatory
+* New: Setting to add an "additional information" textarea
+* New: Added sha256 verification code which reflects the data contained within the withdrawal request
+* Improvement: Allow setting days to withdraw to 0 to keep order withdrawable indefinitely
+* Improvement: Renamed order number field to "Contract identification" and make it mandatory by default
+* Improvement: Explicitly exclude checkout-draft status
+* Improvement: Add order notes to withdrawals, e.g. on status updates
+* Fix: Woo < 10.X backwards compatibility
+
 = 2.2.1 =
 * Improvement: Show withdrawal page valid/invalid status in settings
 * Improvement: Use a more consistent HTML markup for checkboxes

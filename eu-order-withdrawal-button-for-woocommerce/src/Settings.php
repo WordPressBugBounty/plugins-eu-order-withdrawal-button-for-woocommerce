@@ -88,6 +88,36 @@ class Settings {
 			),
 
 			array(
+				'title'    => _x( 'Mandatory fields', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+				'id'       => 'eu_owb_woocommerce_mandatory_fields',
+				'desc_tip' => _x( 'Select fields that should be mandatory while submitting a new withdrawal', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+				'type'     => 'multiselect',
+				'class'    => 'wc-enhanced-select',
+				'css'      => 'width: 400px;',
+				'options'  => array(
+					'first_name'             => _x( 'First name', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+					'last_name'              => _x( 'Last name', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+					'order_number'           => _x( 'Contract Identification', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+					'additional_information' => _x( 'Additional information', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+				),
+				'default'  => array(
+					'order_number',
+					'first_name',
+					'last_name',
+				),
+				'autoload' => false,
+			),
+
+			array(
+				'title'    => _x( 'Additional information', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+				'desc'     => _x( 'Allow guests to enter additional information in a separate text field.', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
+				'id'       => 'eu_owb_woocommerce_enable_additional_information',
+				'type'     => Package::is_integration() ? 'gzd_toggle' : 'checkbox',
+				'default'  => 'no',
+				'autoload' => false,
+			),
+
+			array(
 				'title'    => _x( 'Non-refundable', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
 				'desc'     => _x( 'Choose certain product types to exclude from being withdrawn.', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
 				'desc_tip' => true,
@@ -102,7 +132,7 @@ class Settings {
 			array(
 				'title'     => _x( 'Withdrawal period', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
 				'desc_tip'  => _x( 'Choose the number of days, starting with the orders\' completed date, to accept withdrawals for orders.', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ),
-				'desc'      => _x( 'Days', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ) . '<div class="eu-owb-settings-additional-desc">' . sprintf( _x( 'Keep in mind that the withdrawal period does not begin until the customer receives the order. If necessary add a buffer period depending on your shipping process.', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ), esc_url( get_admin_url( null, 'admin.php?page=wc-orders&unverified_withdrawals=yes' ) ) ) . '</div>',
+				'desc'      => _x( 'Days', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ) . '<div class="eu-owb-settings-additional-desc">' . sprintf( _x( 'Keep in mind that the withdrawal period does not begin until the customer receives the order. If necessary add a buffer period depending on your shipping process. Use 0 to make withdrawals available at any time.', 'owb', 'eu-order-withdrawal-button-for-woocommerce' ), esc_url( get_admin_url( null, 'admin.php?page=wc-orders&unverified_withdrawals=yes' ) ) ) . '</div>',
 				'css'       => 'max-width: 60px;',
 				'row_class' => 'withdrawal-period',
 				'type'      => 'number',
