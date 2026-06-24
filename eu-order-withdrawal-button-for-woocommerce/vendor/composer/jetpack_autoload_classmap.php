@@ -75,63 +75,63 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-shutdown-handler.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Admin\\Admin' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Admin/Admin.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Admin\\Privacy' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Admin/Privacy.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Admin\\WithdrawalTable' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Admin/WithdrawalTable.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Ajax' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Ajax.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Compatibility\\Compatibility' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Compatibility/Compatibility.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Compatibility\\WPML' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Compatibility/WPML.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\DataStores\\WithdrawalItem' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/DataStores/WithdrawalItem.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\DataStores\\WithdrawalOrder' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/DataStores/WithdrawalOrder.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\DataStores\\WithdrawalOrderCPT' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/DataStores/WithdrawalOrderCPT.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\EmailTranslationHelper' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/EmailTranslationHelper.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Install' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Install.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Package' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Package.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\Settings' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/Settings.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\WithdrawalItem' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/WithdrawalItem.php'
 	),
 	'Vendidero\\OrderWithdrawalButton\\WithdrawalOrder' => array(
-		'version' => '2.3.0.0',
+		'version' => '2.3.1.0',
 		'path'    => $baseDir . '/src/WithdrawalOrder.php'
 	),
 	'Version_Loader' => array(

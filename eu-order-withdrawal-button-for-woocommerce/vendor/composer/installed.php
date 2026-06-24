@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'vendidero/eu-order-withdrawal-button-for-woocommerce',
-        'pretty_version' => '2.3.0',
-        'version' => '2.3.0.0',
+        'pretty_version' => '2.3.1',
+        'version' => '2.3.1.0',
         'reference' => null,
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
@@ -20,8 +20,8 @@
             'dev_requirement' => false,
         ),
         'vendidero/eu-order-withdrawal-button-for-woocommerce' => array(
-            'pretty_version' => '2.3.0',
-            'version' => '2.3.0.0',
+            'pretty_version' => '2.3.1',
+            'version' => '2.3.1.0',
             'reference' => null,
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
