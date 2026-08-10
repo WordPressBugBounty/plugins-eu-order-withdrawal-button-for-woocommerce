@@ -2,10 +2,10 @@
 Contributors: vendidero, vdwoocommercesupport
 Tags: woocommerce, withdrawal, cancellation, EU, compliance
 Requires at least: 5.4
-Tested up to: 7.0
+Tested up to: 7.1
 WC requires at least: 3.9
-WC tested up to: 10.9
-Stable tag: 2.3.2
+WC tested up to: 11.0
+Stable tag: 2.4.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -66,12 +66,13 @@ You may furthermore use the shortcode [eu_owb_order_withdrawal_button] to place 
 Make sure that you've published your withdrawal page (which by default is created as a draft during installation). The embedded button does only show on shop-related pages.
 
 = Need help? =
-
 You may ask your questions within our free [WordPress support forum](https://wordpress.org/support/plugin/eu-order-withdrawal-button-for-woocommerce).
 
 = Want to file a bug or improve the plugin? =
-
 Bug reports may be filed via our [GitHub repository](https://github.com/vendidero/eu-order-withdrawal-button-for-woocommerce).
+
+= Where do I report security bugs found in this plugin? =
+Please report security bugs found in the source code of the EU Order Withdrawal Button for WooCommerce plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/155b9a37-427c-4050-aaeb-0bd9ca1f74ab). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Screenshots ==
 
@@ -80,6 +81,12 @@ Bug reports may be filed via our [GitHub repository](https://github.com/vendider
 3. Manage withdrawals
 
 == Changelog ==
+= 2.4.0 =
+* Improvement: Edit withdrawal flow
+* Improvement: Bulk spam protection
+* Security: Remove the partial withdrawal availability check to prevent information leakage (e.g. to check whether a specific email + order exists)
+* Fix: Fix a template typo show_imag vs. show_image
+
 = 2.3.2 =
 * New: Introduce setting to place a withdrawal link (in case available) within customer account order actions
 * Improvement: Override additional abstract order method to prevent compatibility issues
