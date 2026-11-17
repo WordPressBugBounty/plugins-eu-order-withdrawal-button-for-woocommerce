@@ -7,22 +7,22 @@ namespace Composer\Autoload;
 class ComposerStaticInitf00f92da1265e878a2577856041dee10
 {
     public static $prefixLengthsPsr4 = array (
-        'V' => 
+        'V' =>
         array (
             'Vendidero\\OrderWithdrawalButton\\' => 32,
         ),
-        'A' => 
+        'A' =>
         array (
             'Automattic\\Jetpack\\Autoloader\\' => 30,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Vendidero\\OrderWithdrawalButton\\' => 
+        'Vendidero\\OrderWithdrawalButton\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'Automattic\\Jetpack\\Autoloader\\' => 
+        'Automattic\\Jetpack\\Autoloader\\' =>
         array (
             0 => __DIR__ . '/..' . '/automattic/jetpack-autoloader/src',
         ),
