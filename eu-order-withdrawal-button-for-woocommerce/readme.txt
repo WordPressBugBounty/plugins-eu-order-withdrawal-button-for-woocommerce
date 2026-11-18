@@ -5,7 +5,7 @@ Requires at least: 5.4
 Tested up to: 7.2
 WC requires at least: 3.9
 WC tested up to: 11.3
-Stable tag: 2.4.7
+Stable tag: 2.4.8
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -83,6 +83,15 @@ Please report security bugs found in the source code of the EU Order Withdrawal 
 3. Manage withdrawals
 
 == Changelog ==
+= 2.4.8 =
+* Security: Rescanned codebase for wp_kses usage to prevent html-tag rebuilding
+* Security: Cross-Site Scripting via (inherited) billing name in admin withdrawal list table (thanks to Mariusz for disclosing)
+* Security: Strip markup from customer-controlled email placeholders (e.g. {order_number}, {contract_identification})
+* Security: Escape withdrawal rejection reason in admin, order notes and emails
+* Fix: Restrict props editable via the admin withdrawal save AJAX action
+* Fix: Do not include additional information in customer emails for unverified withdrawal requests
+* Fix: Per-email rate limit ignored the eu_owb_woocommerce_max_requests_per_email filter
+
 = 2.4.7 =
 * Improvement: Modernize build process
 * Security: Cross-Site scripting via User-Agent Header in withdrawal preview modal (thanks to Mohamed Amgad Khater for disclosing)
